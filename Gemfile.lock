@@ -1,0 +1,38 @@
+PATH
+  remote: ../BubbleWrap
+  specs:
+    bubble-wrap (1.6.0)
+      bubble-wrap-http (= 1.6.0)
+
+PATH
+  remote: ../ProMotion
+  specs:
+    ProMotion (2.0.0)
+      dbt (~> 1.1.4)
+      methadone (~> 1.4)
+
+PATH
+  remote: ../formotion
+  specs:
+    formotion (1.7)
+      bubble-wrap (>= 1.4.0)
+      motion-require (>= 0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bubble-wrap-http (1.6.0)
+    dbt (1.1.4)
+    methadone (1.4.0)
+      bundler
+    motion-require (0.2.0)
+    rake (10.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  ProMotion!
+  bubble-wrap!
+  formotion!
+  rake
