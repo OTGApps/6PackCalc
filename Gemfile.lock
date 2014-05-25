@@ -15,18 +15,20 @@ GIT
       methadone (~> 1.4)
 
 GIT
+  remote: git://github.com/markrickert/formotion.git
+  revision: 6b8c6a861f9a349c2e4cbfbd47b70e156b5c524b
+  branch: input-accessories-and-callback
+  specs:
+    formotion (1.7)
+      bubble-wrap (>= 1.4.0)
+      motion-require (>= 0.1.0)
+
+GIT
   remote: git://github.com/rubymotion/BubbleWrap.git
   revision: 9c9c7c117c7d9275ad9faeec9b0825e4f41f6041
   specs:
     bubble-wrap (1.6.0)
       bubble-wrap-http (= 1.6.0)
-
-PATH
-  remote: ../formotion
-  specs:
-    formotion (1.7)
-      bubble-wrap (>= 1.4.0)
-      motion-require (>= 0.1.0)
 
 GEM
   remote: https://rubygems.org/

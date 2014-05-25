@@ -91,8 +91,29 @@ class CalculatorScreen < Formotion::FormController
           input_accessory: :done,
           done_action: -> { done }
         }]
+      },{
+        title: 'A 6-Pack at this price would cost:',
+        rows: [{
+          type: :static,
+          value: "$%.2f" % calculate
+        },{
+          type: :static,
+          value: "(or $%.2f per bottle)" % calculate_one
+        }]
       }]
     }
+  end
+
+  def calculate
+    my_oz = BigDecimal.new(@state[:size] || default_option)
+    six_pack_oz = BigDecimal.new(72.0)
+    price = BigDecimal.new(@state[:price])
+
+    (six_pack_oz / my_oz * price).to_f.round(2)
+  end
+
+  def calculate_one
+    (calculate / 6).round(2)
   end
 
   def picker_options
