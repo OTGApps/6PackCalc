@@ -10,11 +10,11 @@ class AboutScreen < Formotion::FormController
           type: :share,
           image: 'share',
           value: {
-            items: "I'm using the '#{App.name}' app to check NOAA winds aloft forecasts. Check it out! http://www.mohawkapps.com/app/aloft/",
+            items: "I'm using the '#{App.name}' app to calculate how much beer costs. Check it out! http://www.mohawkapps.com/app/6pack-calc/",
             excluded: excluded_services
           }
         }, {
-          title: "Rate #{App.name} on iTunes",
+          title: "Rate on iTunes",
           type: :rate_itunes,
           image: 'itunes'
         }]
@@ -25,23 +25,14 @@ class AboutScreen < Formotion::FormController
           type: :github_link,
           image: 'github',
           warn: true,
-          value: 'https://github.com/MohawkApps/aloft'
+          value: 'https://github.com/MohawkApps/6PackCalc'
         }, {
           title: 'Found a bug?',
           subtitle: 'Log it here.',
           type: :issue_link,
           image: 'issue',
           warn: true,
-          value: 'https://github.com/MohawkApps/aloft/issues/'
-        }, {
-          title: 'Email me suggestions!',
-          subtitle: 'I\'d love to hear from you',
-          type: :email_me,
-          image: 'email',
-          value: {
-            to: 'mark@mohawkapps.com',
-            subject: "#{App.name} App Feedback"
-          }
+          value: 'https://github.com/MohawkApps/6PackCalc/issues/'
         }]
       }, {
         title: "About #{App.name}:",
@@ -62,6 +53,9 @@ class AboutScreen < Formotion::FormController
           warn: true,
           value: 'http://www.mohawkapps.com'
         }, {
+          # This is technically a lie since I started writing this at 30,000 feet
+          # And then finished it at #Inspect 2014 in San Francisco.
+          # But it's the spirit of the thing. NC is my home.
           title: 'Made with ♥ in North Carolina',
           type: :static,
           enabled: false,
