@@ -19,6 +19,8 @@ Motion::Project::App.setup do |app|
   app.icons = Dir.glob("resources/Icon*.png").map{|icon| icon.split("/").last}
   app.info_plist['FULL_APP_NAME'] = '6Pack Calculator'
   app.info_plist['APP_STORE_ID'] = 414522449
+  app.info_plist['UIViewControllerBasedStatusBarAppearance'] = false
+  app.info_plist['UIStatusBarStyle'] = 'UIStatusBarStyleLightContent'
 
   app.pods do
     pod 'FlurrySDK'
