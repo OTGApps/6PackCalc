@@ -164,7 +164,20 @@ class CalculatorScreen < Formotion::FormController
     puts self.navigationController
     # self.setToolbarHidden(false, animated:false)
 
+    set_nav_bar_button :left, {
+      title: "About",
+      system_item: :reply,
+      action: :show_about
+    }
+
   end
+
+  def show_about
+    about_screen = AboutScreen.alloc.init
+    nav_controller = UINavigationController.alloc.initWithRootViewController(about_screen)
+    open_modal nav_controller
+  end
+
   def title
     'Six Pack Calculator'
   end
