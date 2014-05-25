@@ -77,6 +77,7 @@ class AboutScreen < Formotion::FormController
     super
     self.title = 'About'
     self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemStop, target:self, action:'close')
+    self.navigationItem.rightBarButtonItem.tintColor = UIColor.whiteColor
   end
 
   def close

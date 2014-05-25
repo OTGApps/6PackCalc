@@ -7,8 +7,8 @@ GIT
 
 GIT
   remote: git://github.com/clearsightstudio/ProMotion.git
-  revision: 69d9531fdbfbba12a752e0875aea22bf0b015ef8
-  branch: pm2
+  revision: d2a54c55b8a72ce5d55b322f85001139a7e4aa40
+  branch: bar_button_item-tint_color
   specs:
     ProMotion (2.0.0)
       dbt (~> 1.1.4)

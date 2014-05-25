@@ -170,6 +170,7 @@ class CalculatorScreen < Formotion::FormController
     set_nav_bar_button :right, {
       title: 'About',
       image: UIImage.imageNamed('info'),
+      tint_color: UIColor.whiteColor,
       action: :show_about
     }
   end
