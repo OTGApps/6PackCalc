@@ -43,6 +43,8 @@ class AppDelegate < ProMotion::Delegate
     nav_bar.setTitleTextAttributes({
       UITextAttributeTextColor => UIColor.whiteColor
     })
+
+    UIBarButtonItem.appearance.setTintColor "#B37E07".to_color
   end
 
   #Flurry exception handler
