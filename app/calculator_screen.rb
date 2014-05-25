@@ -159,17 +159,12 @@ class CalculatorScreen < Formotion::FormController
   def viewDidLoad
     super
     self.title = title
-    # self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemStop, target:self, action:'close')
-    puts ";"
-    puts self.navigationController
-    # self.setToolbarHidden(false, animated:false)
 
-    set_nav_bar_button :left, {
-      title: "About",
-      system_item: :reply,
+    set_nav_bar_button :right, {
+      title: 'About',
+      image: UIImage.imageNamed('info'),
       action: :show_about
     }
-
   end
 
   def show_about

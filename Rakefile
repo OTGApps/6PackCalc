@@ -10,7 +10,7 @@ end
 
 Motion::Project::App.setup do |app|
   app.name = '6Pack Calc'
-  app.deployment_target = "7.0"
+  app.deployment_target = '7.0'
   app.device_family = [:iphone]
   app.interface_orientations = [:portrait, :portrait_upside_down]
   app.identifier = 'com.homebrewparadise.sixpackcalc'
@@ -18,13 +18,13 @@ Motion::Project::App.setup do |app|
   app.short_version = '2.0.0'
   app.icons = Dir.glob("resources/Icon*.png").map{|icon| icon.split("/").last}
   app.info_plist['FULL_APP_NAME'] = '6Pack Calculator'
-  # app.info_plist['APP_STORE_ID'] = 483940964
+  app.info_plist['APP_STORE_ID'] = 414522449
 
-  # app.pods do
-  #   pod 'FlurrySDK'
-  #   pod 'Appirater'
-  #   pod 'Harpy'
-  # end
+  app.pods do
+    pod 'FlurrySDK'
+    pod 'Appirater'
+    pod 'Harpy'
+  end
 
   app.release do
     app.info_plist['AppStoreRelease'] = true
