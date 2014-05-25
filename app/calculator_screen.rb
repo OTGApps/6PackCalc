@@ -5,10 +5,10 @@ class CalculatorScreen < Formotion::FormController
   attr_accessor :state
 
   def done(resetting = false)
-    puts "Done"
-    puts @form.render unless @form.nil?
+    ap @form.render unless @form.nil?
 
     @state = @form.render
+    # We need to get rid of this value if we're moving to another category.
     @state[:size] = nil if resetting
 
     # Refresh the data in the form
@@ -21,8 +21,7 @@ class CalculatorScreen < Formotion::FormController
   def init
     @state = {
       price: 0.0,
-      container: :bottle,
-      size: '7.0'
+      container: :bottle
     }
     build_form
     super.initWithForm(@form)
@@ -34,13 +33,15 @@ class CalculatorScreen < Formotion::FormController
     @form = Formotion::Form.new(form_data)
 
     # Observe All Checkbox rows
+    # TODO - there's GOT to be an easier way to do this. :/
     self.form.sections.each_with_index do |s, si|
       s.rows.each_with_index do |r, ri|
         if r.type == :check
           observe(self.form.sections[si].rows[ri], "value") do |old_value, new_value|
-            puts "Got check change!"
-            EM.add_timer 0.1 do
-              done(true)
+            if new_value == true
+              EM.add_timer 0.1 do
+                done(true)
+              end
             end
           end
         end
@@ -95,29 +96,14 @@ class CalculatorScreen < Formotion::FormController
   end
 
   def picker_options
-    return bottles if @form.nil?
-
-    puts "Picker options"
-    puts @form.render[:container]
-
-    case @form.render[:container]
-    when :bottle
-      puts "Bottles!"
-      return bottles
-    when :glass
-      puts "Glasses"
-      return glasses
-    when :keg
-      puts "Kegs!"
-      return kegs
-    end
+    @form.nil? ? bottle : self.send(@form.render[:container].to_s)
   end
 
   def default_option
     picker_options[0][1]
   end
 
-  def bottles
+  def bottle
     [
       ['7 oz', '7.0'],
       ['11.2 oz', '11.2'],
@@ -133,7 +119,7 @@ class CalculatorScreen < Formotion::FormController
     ]
   end
 
-  def glasses
+  def glass
     [
       ['Cheater pint (actual: 13 oz)', '13.0'],
       ['16 oz (actual: 15 oz)', '15.0'],
@@ -145,7 +131,7 @@ class CalculatorScreen < Formotion::FormController
     ]
   end
 
-  def kegs
+  def keg
     [
       ['5 l mini-keg', '169.070114'],
       ['Soda (3 gal)', '384.0'],
