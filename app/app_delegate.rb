@@ -1,15 +1,16 @@
 class AppDelegate < ProMotion::Delegate
-  # tint_color UIColor.whiteColor
+  tint_color "#B37E07".to_color
 
   def on_load(app, options)
     setup
     appearance
 
-    open UINavigationController.alloc.initWithRootViewController(CalculatorScreen.alloc.init)
+    open UINavigationController.alloc.initWithRootViewController(CalculatorScreen.new)
   end
 
   def setup
     BW.debug = true unless App.info_plist['AppStoreRelease'] == true
+    BW.use_weak_callbacks = true
 
     # 3rd Party integrations
     # Only do this on the device
@@ -17,6 +18,7 @@ class AppDelegate < ProMotion::Delegate
       app_id = App.info_plist['APP_STORE_ID']
 
       # Flurry
+      # TODO - Put the right id in here.
       # NSSetUncaughtExceptionHandler("uncaughtExceptionHandler")
       # Flurry.startSession("2ST55ZW4W4RT2X8X6WWQ")
 
@@ -36,7 +38,7 @@ class AppDelegate < ProMotion::Delegate
   def appearance
     nav_bar = UINavigationBar.appearance
     nav_bar.setBarStyle UIBarStyleBlack
-    nav_bar.setBarTintColor "#15adca".to_color
+    nav_bar.setBarTintColor "#B37E07".to_color
     nav_bar.setTintColor UIColor.whiteColor
     nav_bar.setTitleTextAttributes({
       UITextAttributeTextColor => UIColor.whiteColor

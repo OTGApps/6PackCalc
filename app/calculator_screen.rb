@@ -1,47 +1,46 @@
 class CalculatorScreen < Formotion::FormController
-  include BW::KVO
+  include BubbleWrap::KVO
+  include ProMotion::ScreenModule
 
   attr_accessor :state
 
-  def default_done_action
-    -> { done }
-  end
-
-  def done
+  def done(resetting = false)
     puts "Done"
-    puts "render: "
     puts @form.render unless @form.nil?
-    @state = @form.render
 
-    puts "state: "
-    puts @state
+    @state = @form.render
+    @state[:size] = nil if resetting
 
     # Refresh the data in the form
     build_form
     self.form = @form
     self.form.controller = self
+    self.title = title # Setting the self.form item also clears the title :/
   end
 
   def init
     @state = {
-      :price=>0.0,
-      :container=>:bottle
+      price: 0.0,
+      container: :bottle,
+      size: '7.0'
     }
     build_form
     super.initWithForm(@form)
   end
 
   def build_form
-    puts "Building Form!"
+    unobserve_all
+
     @form = Formotion::Form.new(form_data)
 
+    # Observe All Checkbox rows
     self.form.sections.each_with_index do |s, si|
       s.rows.each_with_index do |r, ri|
         if r.type == :check
           observe(self.form.sections[si].rows[ri], "value") do |old_value, new_value|
             puts "Got check change!"
             EM.add_timer 0.1 do
-              done
+              done(true)
             end
           end
         end
@@ -59,7 +58,7 @@ class CalculatorScreen < Formotion::FormController
           key: :price,
           value: @state[:price] || nil,
           input_accessory: :done,
-          done_action: default_done_action
+          done_action: -> { done }
         }]
       }, {
         title: "Container:",
@@ -82,15 +81,14 @@ class CalculatorScreen < Formotion::FormController
           type: :check,
         }]
       }, {
-        title: 'Container Size',
+        title: "#{@state[:container].to_s.titleize} Size:",
         rows: [{
-          title: "",
           key: :size,
           type: :picker,
           items: picker_options,
-          value: default_option,
+          value: @state[:size] || default_option,
           input_accessory: :done,
-          done_action: default_done_action
+          done_action: -> { done }
         }]
       }]
     }
@@ -160,7 +158,14 @@ class CalculatorScreen < Formotion::FormController
 
   def viewDidLoad
     super
-    self.title = 'Six Pack Calculator'
+    self.title = title
     # self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemStop, target:self, action:'close')
+    puts ";"
+    puts self.navigationController
+    # self.setToolbarHidden(false, animated:false)
+
+  end
+  def title
+    'Six Pack Calculator'
   end
 end
