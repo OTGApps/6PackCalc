@@ -28,6 +28,17 @@ Motion::Project::App.setup do |app|
     pod 'Harpy'
   end
 
+  app.development do
+    app.entitlements['get-task-allow'] = true
+    app.seed_id = '7N372VT8HB'
+    app.identifier = app.seed_id + '.' + app.identifier
+    app.entitlements['keychain-access-groups'] = [
+      app.seed_id + '.' + app.identifier
+    ]
+    app.codesign_certificate = "iPhone Developer: Mark Rickert (YA2VZGDX4S)"
+    app.provisioning_profile = "../Provisioning/WildcardDevelopment.mobileprovision"
+  end
+
   app.release do
     app.info_plist['AppStoreRelease'] = true
     app.entitlements['get-task-allow'] = false
