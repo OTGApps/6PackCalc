@@ -18,15 +18,11 @@ class AppDelegate < ProMotion::Delegate
       app_id = App.info_plist['APP_STORE_ID']
 
       # Flurry
-      # TODO - Put the right id in here.
-      # NSSetUncaughtExceptionHandler("uncaughtExceptionHandler")
-      # Flurry.startSession("2ST55ZW4W4RT2X8X6WWQ")
+      NSSetUncaughtExceptionHandler("uncaughtExceptionHandler")
+      Flurry.startSession("3V3948P3TTBP2HGPRLCU")
 
       # Appirater
       Appirater.setAppId app_id
-      Appirater.setDaysUntilPrompt 5
-      Appirater.setUsesUntilPrompt 10
-      Appirater.setTimeBeforeReminding 10
       Appirater.appLaunched true
 
       # Harpy
