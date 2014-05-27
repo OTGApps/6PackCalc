@@ -13,6 +13,10 @@ I was happy to realize that a $9 fill of my 1/2 gallon growler (64oz) at my loca
 
 This app is open source. Browse the source code here: https://github.com/MohawkApps/6PackCalc/
 
+## Objective-C to RubyMotion
+
+This app was converted from Objective-C to Rubymotion over the course of 2 days and aproximately 5-7 hours (everything, including new icon and app submission). If you want to see the legacy Objective-C code, check out the [SixPackCalc.objectivec.zip](SixPackCalc.objectivec.zip) file. But watch out, this code is extremely old and hasn't been tested in the current version of Xcode. I can't promise it'll work, but you can look through the source to see how much easier it is to do in RubyMotion!
+
 ## Download from the App Store
 
 [![image](http://ax.phobos.apple.com.edgesuite.net/images/web/linkmaker/badge_appstore-lrg.gif)](https://itunes.apple.com/us/app/six-pack-equivalent-calculator/id414522449?mt=8&at=10l4yY&ct=github)
