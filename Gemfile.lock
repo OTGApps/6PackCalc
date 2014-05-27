@@ -6,22 +6,22 @@ GIT
     awesome_print_motion (0.1.0)
 
 GIT
-  remote: git://github.com/clearsightstudio/ProMotion.git
-  revision: d2a54c55b8a72ce5d55b322f85001139a7e4aa40
-  branch: bar_button_item-tint_color
-  specs:
-    ProMotion (2.0.0)
-      dbt (~> 1.1.4)
-      methadone (~> 1.4)
-
-GIT
-  remote: git://github.com/markrickert/formotion.git
-  revision: 6b8c6a861f9a349c2e4cbfbd47b70e156b5c524b
-  branch: input-accessories-and-callback
+  remote: git://github.com/clayallsopp/formotion.git
+  revision: 9726d9702c98e3b0fdee3bfcef74e14b9d0524dc
+  branch: master
   specs:
     formotion (1.7)
       bubble-wrap (>= 1.4.0)
       motion-require (>= 0.1.0)
+
+GIT
+  remote: git://github.com/clearsightstudio/ProMotion.git
+  revision: 293340e9308232706504b15085eee158fe203c0b
+  branch: pm2
+  specs:
+    ProMotion (2.0.0)
+      dbt (~> 1.1.4)
+      methadone (~> 1.4)
 
 GIT
   remote: git://github.com/rubymotion/BubbleWrap.git
