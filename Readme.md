@@ -1,7 +1,7 @@
 # 6Pack Calc [![Code Climate](https://codeclimate.com/github/OTGApps/6PackCalc.png)](https://codeclimate.com/github/OTGApps/6PackCalc)
 ![App Icon](resources/Icon-120.png)
 
-#### A [RubyMotion](http://www.rubymotion.com/) application brought to you by [Off THe Grid Apps](http://otgapps.io/).
+#### A [RubyMotion](http://www.rubymotion.com/) application brought to you by [Off The Grid Apps](http://otgapps.io/).
 
 Ever wonder how much you’re really paying for that pint of beer? Or how much that 64oz growler actually costs without having to do conversions in your head? 
 
