@@ -1,7 +1,7 @@
-# 6Pack Calc [![Code Climate](https://codeclimate.com/github/MohawkApps/6PackCalc.png)](https://codeclimate.com/github/MohawkApps/6PackCalc)
+# 6Pack Calc [![Code Climate](https://codeclimate.com/github/OTGApps/6PackCalc.png)](https://codeclimate.com/github/OTGApps/6PackCalc)
 ![App Icon](resources/Icon-120.png)
 
-#### A [RubyMotion](http://www.rubymotion.com/) application brought to you by [Mohawk Apps](http://www.mohawkapps.com/).
+#### A [RubyMotion](http://www.rubymotion.com/) application brought to you by [Off THe Grid Apps](http://otgapps.io/).
 
 Ever wonder how much you’re really paying for that pint of beer? Or how much that 64oz growler actually costs without having to do conversions in your head? 
 
@@ -40,4 +40,4 @@ This app was converted from Objective-C to Rubymotion over the course of 2 days 
 2. Work on a feature branch.
 3. Send me a pull request.
 
-*I also like it when people who can't contribute [open an issue](https://github.com/MohawkApps/6PackCalc/issues)*
+*I also like it when people who can't contribute [open an issue](https://github.com/OTGApps/6PackCalc/issues)*
