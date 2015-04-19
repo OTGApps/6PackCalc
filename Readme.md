@@ -11,7 +11,7 @@ The idea is that everyone knows how much a six-pack of their favorite beer costs
 
 I was happy to realize that a $9 fill of my 1/2 gallon growler (64oz) at my local brewpub was the equivalent of a $10.12 six-pack! That’s a great deal for craft beer when I’m used to paying upwards of $12 or more for good craft beer.
 
-This app is open source. Browse the source code here: https://github.com/MohawkApps/6PackCalc/
+This app is open source. Browse the source code here: https://github.com/OTGApps/6PackCalc/
 
 ## Objective-C to RubyMotion
 
